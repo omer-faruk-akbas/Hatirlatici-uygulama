@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.hatirlat">
+
+    <!-- İzinler -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="io.flutter.app.FlutterApplication"
+        android:label="Hatırlat"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/LaunchTheme"
+        tools:replace="android:label,android:name">
+
+        <!-- flutter_local_notifications için gerekli hizmetler -->
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+    </application>
+</manifest>
